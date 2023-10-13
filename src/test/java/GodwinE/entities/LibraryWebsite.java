@@ -67,51 +67,66 @@ public class LibraryWebsite {
         Scanner input = new Scanner(System.in);
 
        while(!num) {
-           System.out.println("Type in book title to add to your archive: ");
-           String name = input.nextLine();
 
-           Predicate<Book> isBookTitleTrue = book -> book.getTitle().equals(name);
+           try{
+               System.out.println("Type in book title to add to your archive: ");
+               String name = input.nextLine();
 
-           List<Book> confirmedBook = booksInStore.stream().filter(isBookTitleTrue).toList();
-           archive.put(random.nextInt(0, 50), confirmedBook);
-           System.out.println(archive);
+               Predicate<Book> isBookTitleTrue = book -> book.getTitle().equals(name);
 
-
-           //2. remove book using ISBN code
-           System.out.println("Add ISBN to remove Book from Archive: ");
-           String removeThisISBN = input.nextLine();
-
-           Predicate<Book> confirmISBN = isbn -> isbn.getIsbnCode().equals(removeThisISBN);
-
-           List<Book> isBookInArchive = booksInStore.stream().filter(confirmISBN).toList();
-           archive.remove(isBookInArchive.getClass());
-           System.out.println("This element has been removed successfully");
-
-           //3.check by isbn
-           System.out.println("Search with ISBN: ");
-           String searchISBN = input.nextLine();
+               List<Book> confirmedBook = booksInStore.stream().filter(isBookTitleTrue).toList();
+               archive.put(random.nextInt(0, 50), confirmedBook);
+               System.out.println(archive);
 
 
-           Predicate<Book> getISBN = isbn -> isbn.equals(searchISBN);
+               //2. remove book using ISBN code
+               System.out.println("Add ISBN to remove Book from Archive: ");
+               String removeThisISBN = input.nextLine();
+
+               Predicate<Book> confirmISBN = isbn -> isbn.getIsbnCode().equals(removeThisISBN);
+
+               List<Book> isBookInArchive = booksInStore.stream().filter(confirmISBN).toList();
+               archive.remove(isBookInArchive.getClass());
+               System.out.println("This element has been removed successfully");
+
+               //3.check by isbn
+               System.out.println("Search with ISBN: ");
+               String searchISBN = input.nextLine();
+
+
+               Predicate<Book> getISBN = isbn -> isbn.equals(searchISBN);
 
            /*for (int i = 0; i < archive.size(); i++) {
                archive.getClass().equals(searchISBN);
                System.out.println(archive);
            }*/
-           List<Book> isISBNCorrect = booksInStore.stream().filter(getISBN).toList();
-           archive.containsKey(isISBNCorrect);
-           System.out.println("You searched for: " + archive);
+               List<Book> isISBNCorrect = booksInStore.stream().filter(getISBN).toList();
+               archive.containsKey(isISBNCorrect);
+               System.out.println("You searched for: " + archive);
 
-            //Check year of publication
+               //Check year of publication
 
-           System.out.println("enter publication year: ");
-           String confirmDate = input.nextLine();
+               System.out.println("enter publication year: ");
+               String confirmDate = input.nextLine();
 
-           Predicate<Book> date = dateAdded -> dateAdded.equals(confirmDate);
+               Predicate<Book> date = dateAdded -> dateAdded.equals(confirmDate);
 
-           List<Book> dateOfPublication = booksInStore.stream().filter(date).toList();
-           archive.containsKey(dateOfPublication);
-           System.out.println("you checked for: " + archive);
+               List<Book> dateOfPublication = booksInStore.stream().filter(date).toList();
+               archive.containsKey(dateOfPublication);
+               System.out.println("you checked for: " + archive);
+
+               System.out.println("Enter Author's name: ");
+               String checkAuthor = input.nextLine();
+
+               Predicate<Book> checkName = author -> author.equals(checkAuthor);
+
+               List<Book> confirmAuthor = booksInStore.stream().filter(checkName).toList();
+               archive.containsKey(confirmAuthor);
+               System.out.println("you checked for this author: " + archive);
+           }catch (Exception e){
+               System.err.println("Error");
+           }
+
 
 
 
