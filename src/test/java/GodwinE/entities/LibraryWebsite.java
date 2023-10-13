@@ -2,35 +2,36 @@ package GodwinE.entities;
 
 import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class LibraryWebsite {
     public static void main(String[] args) {
 
-        Book book1 = new Book("ISBN 47895983874I 07466", "Michael Brown", "Romance", "Lovers", "12-12-1994",
+        Book book1 = new Book("ISBN47895983874I07466", "Michael Brown", "Romance", "Lovers", "12-12-1994",
                 200);
 
-        Book book2 = new Book("ISBN 827714016215 00311", "James Wise", "Crime", "Kill Bill", "05-04-2020",
+        Book book2 = new Book("ISBN82771401621500311", "James Wise", "Crime", "Kill Bill", "05-04-2020",
                 200);
 
-        Book book3 = new Book("ISBN 827747746784 47858", "Lugi", "Fiction", "kiss", "03-02-2021",
+        Book book3 = new Book("ISBN82774774678447858", "Lugi", "Fiction", "kiss", "03-02-2021",
                 200);
 
-        Book book4 = new Book("ISBN 478504389590 04850", "Will Smith", "Romance", "Fight", "13-09-2002",
+        Book book4 = new Book("ISBN47850438959004850", "Will Smith", "Romance", "Fight", "13-09-2002",
                 200);
 
-        Book book5 = new Book("ISBN 123850860068 09645", "Chris Turker", "Rom-Com", "China", "02-08-1997",
+        Book book5 = new Book("ISBN12385086006809645", "Chris Turker", "Rom-Com", "China", "02-08-1997",
                 200);
 
-        Book book6 = new Book("ISBN 039566734950 08850", "Bruce Lee", "Fight", "Pay Day", "07-03-1978",
+        Book book6 = new Book("ISBN03956673495008850", "Bruce Lee", "Fight", "Pay Day", "07-03-1978",
                 200);
 
-        Book book7 = new Book("ISBN 559590589485 50588", "Ice-Cube", "Hip-Hop", "Camden", "01-09-2000",
+        Book book7 = new Book("ISBN55959058948550588", "Ice-Cube", "Hip-Hop", "Camden", "01-09-2000",
                 200);
 
-        Book book8 = new Book("ISBN 0487394784945 0948", "Dre", "Hip-Hop", "The Hood", "04-10-2006",
+        Book book8 = new Book("ISBN04873947849450948", "Dre", "Hip-Hop", "The Hood", "04-10-2006",
                 200);
 
-        Book book9 = new Book("ISBN 8209467374684 9984", "Jackie Chan", "Fiction", "Tokyo", "09-08-2014",
+        Book book9 = new Book("ISBN82094673746849984", "Jackie Chan", "Fiction", "Tokyo", "09-08-2014",
                 200);
 
         //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Magazines<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -78,15 +79,31 @@ public class LibraryWebsite {
 
            //2. remove book using ISBN code
            System.out.println("Add ISBN to remove Book from Archive: ");
-           int removeThisISBN = Integer.parseInt(input.nextLine());
+           String removeThisISBN = input.nextLine();
 
            Predicate<Book> confirmISBN = isbn -> isbn.getIsbnCode().equals(removeThisISBN);
 
            List<Book> isBookInArchive = booksInStore.stream().filter(confirmISBN).toList();
-           archive.remove(isBookInArchive);
-           System.out.println("Successfully removed");
+           archive.remove(isBookInArchive.getClass());
+           System.out.println("This element has been removed successfully");
 
            //3.check by isbn
+           System.out.println("Search with ISBN: ");
+           String searchISBN = input.nextLine();
+
+
+           Predicate<Book> getISBN = isbn -> isbn.equals(searchISBN);
+
+           /*for (int i = 0; i < archive.size(); i++) {
+               archive.getClass().equals(searchISBN);
+               System.out.println(archive);
+           }*/
+
+           List<Book> isISBNCorrect = booksInStore.stream().filter(getISBN).toList();
+           archive.containsKey(isISBNCorrect);
+           System.out.println("You searched for: " + archive);
+
+
 
 
 
