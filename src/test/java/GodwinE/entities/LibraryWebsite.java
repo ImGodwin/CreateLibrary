@@ -72,11 +72,14 @@ public class LibraryWebsite {
            Predicate<Book> isBookTitleTrue = book -> book.getTitle().equals(name);
 
            List<Book> confirmedBook = booksInStore.stream().filter(isBookTitleTrue).toList();
-           confirmedBook.forEach(book -> System.out.println("This book: " + book + " has been added to your archive" ));
+           archive.put(random.nextInt(0, 50), confirmedBook);
+           System.out.println(archive);
 
-           //remove book using ISBN code
+
+           //2. remove book using ISBN code
            System.out.println("Add ISBN to remove Book from Archive: ");
            int removeThisISBN = Integer.parseInt(input.nextLine());
+
 
 
 
