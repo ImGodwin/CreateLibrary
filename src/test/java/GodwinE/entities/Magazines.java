@@ -1,46 +1,28 @@
 package GodwinE.entities;
 
-public class Book {
+import java.util.List;
 
-    private String author;
-    private String type;
+public class Magazines {
     private String title;
     private String yearPublished;
     private int pageAmount;
+    private List<String> publicationsType;
 
-    public Book(String author, String type, String title, String date, int pageAmount) {
-        this.author = author;
-        this.type = type;
+    public Magazines(String title, String yearPublished, int pageAmount, List<String> publicationsType) {
         this.title = title;
         this.yearPublished = yearPublished;
         this.pageAmount = pageAmount;
+        this.publicationsType = publicationsType;
     }
 
     @Override
     public String toString() {
-        return "Book{" +
-                "author='" + author + '\'' +
-                ", type='" + type + '\'' +
-                ", title='" + title + '\'' +
+        return "Magazines{" +
+                "title='" + title + '\'' +
                 ", yearPublished='" + yearPublished + '\'' +
                 ", pageAmount=" + pageAmount +
+                ", publicationsType=" + publicationsType +
                 '}';
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getTitle() {
@@ -51,11 +33,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getDate() {
+    public String getYearPublished() {
         return yearPublished;
     }
 
-    public void setDate(String yearPublished) {
+    public void setYearPublished(String yearPublished) {
         this.yearPublished = yearPublished;
     }
 
@@ -65,5 +47,13 @@ public class Book {
 
     public void setPageAmount(int pageAmount) {
         this.pageAmount = pageAmount;
+    }
+
+    public List<String> getPublicationsType() {
+        return publicationsType;
+    }
+
+    public void setPublicationsType(List<String> publicationsType) {
+        this.publicationsType = publicationsType;
     }
 }
