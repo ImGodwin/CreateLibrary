@@ -98,12 +98,20 @@ public class LibraryWebsite {
                archive.getClass().equals(searchISBN);
                System.out.println(archive);
            }*/
-
            List<Book> isISBNCorrect = booksInStore.stream().filter(getISBN).toList();
            archive.containsKey(isISBNCorrect);
            System.out.println("You searched for: " + archive);
 
+            //Check year of publication
 
+           System.out.println("enter publication year: ");
+           String confirmDate = input.nextLine();
+
+           Predicate<Book> date = dateAdded -> dateAdded.equals(confirmDate);
+
+           List<Book> dateOfPublication = booksInStore.stream().filter(date).toList();
+           archive.containsKey(dateOfPublication);
+           System.out.println("you checked for: " + archive);
 
 
 
