@@ -2,13 +2,15 @@ package GodwinE.entities;
 
 public class Book {
 
+    private String isbnCode;
     private String author;
     private String type;
     private String title;
     private String yearPublished;
     private int pageAmount;
 
-    public Book(String author, String type, String title, String date, int pageAmount) {
+    public Book(String isbnCode, String author, String type, String title, String yearPublished, int pageAmount) {
+        this.isbnCode = isbnCode;
         this.author = author;
         this.type = type;
         this.title = title;
@@ -19,12 +21,21 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "author='" + author + '\'' +
+                "isbnCode='" + isbnCode + '\'' +
+                ", author='" + author + '\'' +
                 ", type='" + type + '\'' +
                 ", title='" + title + '\'' +
                 ", yearPublished='" + yearPublished + '\'' +
                 ", pageAmount=" + pageAmount +
                 '}';
+    }
+
+    public String getIsbnCode() {
+        return isbnCode;
+    }
+
+    public void setIsbnCode(String isbnCode) {
+        this.isbnCode = isbnCode;
     }
 
     public String getAuthor() {
@@ -51,11 +62,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getDate() {
+    public String getYearPublished() {
         return yearPublished;
     }
 
-    public void setDate(String yearPublished) {
+    public void setYearPublished(String yearPublished) {
         this.yearPublished = yearPublished;
     }
 

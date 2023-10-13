@@ -3,12 +3,15 @@ package GodwinE.entities;
 import java.util.List;
 
 public class Magazines {
+
+    private String isbnCode;
     private String title;
     private String yearPublished;
     private int pageAmount;
     private List<String> publicationsType;
 
-    public Magazines(String title, String yearPublished, int pageAmount, List<String> publicationsType) {
+    public Magazines(String isbnCode, String title, String yearPublished, int pageAmount, List<String> publicationsType) {
+        this.isbnCode = isbnCode;
         this.title = title;
         this.yearPublished = yearPublished;
         this.pageAmount = pageAmount;
@@ -18,11 +21,20 @@ public class Magazines {
     @Override
     public String toString() {
         return "Magazines{" +
-                "title='" + title + '\'' +
+                "isbnCode='" + isbnCode + '\'' +
+                ", title='" + title + '\'' +
                 ", yearPublished='" + yearPublished + '\'' +
                 ", pageAmount=" + pageAmount +
                 ", publicationsType=" + publicationsType +
                 '}';
+    }
+
+    public String getIsbnCode() {
+        return isbnCode;
+    }
+
+    public void setIsbnCode(String isbnCode) {
+        this.isbnCode = isbnCode;
     }
 
     public String getTitle() {
