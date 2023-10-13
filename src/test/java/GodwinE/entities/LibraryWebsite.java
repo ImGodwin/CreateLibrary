@@ -80,6 +80,17 @@ public class LibraryWebsite {
            System.out.println("Add ISBN to remove Book from Archive: ");
            int removeThisISBN = Integer.parseInt(input.nextLine());
 
+           Predicate<Book> confirmISBN = isbn -> isbn.getIsbnCode().equals(removeThisISBN);
+
+           List<Book> isBookInArchive = booksInStore.stream().filter(confirmISBN).toList();
+           archive.remove(isBookInArchive);
+           System.out.println("Successfully removed");
+
+           //3.check by isbn
+
+
+
+
 
 
 
