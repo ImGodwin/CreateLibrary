@@ -2,7 +2,7 @@ package GodwinE.entities;
 
 import java.util.List;
 
-public class Magazines {
+public class Magazine {
 
     private String isbnCode;
     private String title;
@@ -10,7 +10,7 @@ public class Magazines {
     private int pageAmount;
     private List<String> publicationsType;
 
-    public Magazines(String isbnCode, String title, String yearPublished, int pageAmount, List<String> publicationsType) {
+    public Magazine(String isbnCode, String title, String yearPublished, int pageAmount, List<String> publicationsType) {
         this.isbnCode = isbnCode;
         this.title = title;
         this.yearPublished = yearPublished;
