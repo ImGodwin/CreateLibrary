@@ -1,5 +1,10 @@
 package GodwinE.entities;
 
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -123,21 +128,14 @@ public class LibraryWebsite {
                List<Book> confirmAuthor = booksInStore.stream().filter(checkName).toList();
                archive.containsKey(confirmAuthor);
                System.out.println("you checked for this author: " + archive);
+
+               num = false;
            }catch (Exception e){
                System.err.println("Error");
            }
-
-
-
-
-
-
-
-
        }
-
-
         input.close();
+
 
 
 
