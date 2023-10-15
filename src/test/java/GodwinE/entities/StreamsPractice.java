@@ -61,6 +61,12 @@ public class StreamsPractice {
 
        // 1. Write a Java program to calculate the average of a list of integers using streams.
 
-        Arrays.stream(new int[]{3, 8, 9, 16, 7}).average().ifPresent(s -> System.out.println(s));
+        //Arrays.stream(new int[]{3, 8, 9, 16, 7}).average().ifPresent(s -> System.out.println(s));
+
+        //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        //2. Write a Java program to convert a list of strings to uppercase or lowercase using streams.
+
+        //Arrays.asList("man", "woman", "male", "female").stream().map(s -> s.toUpperCase()).forEach(el -> System.out.println(el));
+
     }
 }
