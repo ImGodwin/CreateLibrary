@@ -3,6 +3,7 @@ package GodwinE.entities;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -87,13 +88,19 @@ public class StreamsPractice {
         //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         //3. Write a Java program to calculate the sum of all even, odd numbers in a list using streams.
 
-        List<Integer> nums = Arrays.asList(1, 4, 9, 27, 9, 22, 49, 21);
+       /* List<Integer> nums = Arrays.asList(1, 4, 9, 27, 9, 22, 49, 21);
 
         int evenNums = nums.stream().filter(n -> n % 2 == 0).reduce(0, Integer::sum);
         System.out.println(Arrays.asList(evenNums));
 
         int notEvenNums = nums.stream().filter(n -> n % 2 != 0).reduce(0, Integer::sum);
-        System.out.println(Arrays.asList(notEvenNums));
+        System.out.println(Arrays.asList(notEvenNums));*/
+
+        //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        //4. Write a Java program to remove all duplicate elements from a list using streams.
+        //Arrays.asList("a1", "a2", "b1", "c2", "c1", "a1").stream().distinct().forEach(s -> System.out.println(s));
+
+
 
     }
 }
