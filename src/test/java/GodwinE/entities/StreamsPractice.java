@@ -61,12 +61,39 @@ public class StreamsPractice {
 
        // 1. Write a Java program to calculate the average of a list of integers using streams.
 
-        //Arrays.stream(new int[]{3, 8, 9, 16, 7}).average().ifPresent(s -> System.out.println(s));
+        //Arrays.stream(new int[]{1, 3, 6, 8, 10, 18, 36}).average().ifPresent(s -> System.out.println("Average is: " + s));
 
         //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         //2. Write a Java program to convert a list of strings to uppercase or lowercase using streams.
 
-        //Arrays.asList("man", "woman", "male", "female").stream().map(s -> s.toUpperCase()).forEach(el -> System.out.println(el));
+        //List < String > colors = Arrays.asList("RED", "grEEn", "white", "Orange", "pink");
+
+       /* List<String> upperCase = colors.stream().map(color -> {
+            color.toUpperCase();
+            return color;
+        }).collect(Collectors.toList());*/
+
+       /* List<String> lowerCase = colors.stream().map(color -> {
+            color.toLowerCase();
+            return color;
+        }).collect(Collectors.toList());*/
+
+        //System.out.println("Lower case: " + lowerCase);
+        //System.out.println("Upper case: " + upperCase);
+
+
+        //Arrays.asList("RED", "grEEn", "white", "Orange", "pink").stream().map(s -> s.toUpperCase()).forEach(el -> System.out.println(el));
+
+        //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        //3. Write a Java program to calculate the sum of all even, odd numbers in a list using streams.
+
+        List<Integer> nums = Arrays.asList(1, 4, 9, 27, 9, 22, 49, 21);
+
+        int evenNums = nums.stream().filter(n -> n % 2 == 0).reduce(0, Integer::sum);
+        System.out.println(Arrays.asList(evenNums));
+
+        int notEvenNums = nums.stream().filter(n -> n % 2 != 0).reduce(0, Integer::sum);
+        System.out.println(Arrays.asList(notEvenNums));
 
     }
 }
